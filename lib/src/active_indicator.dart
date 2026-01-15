@@ -17,8 +17,8 @@ class ActiveIndicatorRect extends StatelessWidget {
       margin: const EdgeInsets.symmetric(horizontal: 3),
       decoration: BoxDecoration(
         color: isActive
-            ? Colors.white.withOpacity(0.9)
-            : const Color(0xFF8E8E8E).withOpacity(0.6),
+            ? Colors.white.withValues(alpha: 0.9)
+            : const Color(0xFF8E8E8E).withValues(alpha: 0.6),
         borderRadius: BorderRadius.circular(5),
       ),
     );
