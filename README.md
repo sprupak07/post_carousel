@@ -1,39 +1,59 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# Post Carousel
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+A customizable Flutter package for displaying a carousel of featured posts with staggered animations.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- **Customizable Carousel**: Display a carousel of images with titles.
+- **Staggered Animations**: Smooth entry animations for carousel items.
+- **Active Indicator**: Visual indicator for the currently active item.
+- **Cached Images**: Efficient image loading with caching support.
+- **Html Support**: Render HTML titles on top of images.
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+Add the dependency to your `pubspec.yaml`:
+
+```yaml
+dependencies:
+  post_carousel: ^0.0.2
+```
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+Import the package:
 
 ```dart
-const like = 'sample';
+import 'package:post_carousel/post_carousel.dart';
 ```
 
-## Additional information
+Create a list of `CarouselItem` and pass it to `PostCarousel`:
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+```dart
+PostCarousel(
+  items: [
+    CarouselItem(
+      image: 'https://example.com/image1.jpg',
+      title: 'Beautiful Landscape',
+      onTap: () {
+        print('Tapped on Item 1');
+      },
+    ),
+    CarouselItem(
+      image: 'https://example.com/image2.jpg',
+      title: 'City Lights',
+    ),
+  ],
+)
+```
+
+## Additional parameters
+
+- `height`: Height of the carousel container (default: 300).
+- `isAutoPlay`: Enable auto-play (default: false).
+- `autoPlayDuration`: Duration between auto-play slides (default: 3 seconds).
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
